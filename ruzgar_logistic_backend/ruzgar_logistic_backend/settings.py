@@ -57,6 +57,7 @@ ROOT_URLCONF = 'ruzgar_logistic_backend.urls'
 
 
 WSGI_APPLICATION = 'ruzgar_logistic_backend.wsgi.application'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Database
