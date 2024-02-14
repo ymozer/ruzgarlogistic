@@ -27,6 +27,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "www.ruzgarlogistic.com",
     "ruzgarlogistic.com",
+    "37.148.212.149"
+    ".ruzgarlogistic.com",
 ]
 
 
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'ruzgar_logistic_backend.urls'
 
 WSGI_APPLICATION = 'ruzgar_logistic_backend.wsgi.application'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
+PREPEND_WWW = False
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -115,6 +117,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+PREPEND_WWW = False
 
 REACT_APP_URL = "http://localhost:3000"
 
