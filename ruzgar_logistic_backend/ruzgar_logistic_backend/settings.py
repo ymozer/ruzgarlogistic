@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
-DEBUG = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,14 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY_CURRENT')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
     "www.ruzgarlogistic.com",
     "ruzgarlogistic.com",
     "37.148.212.149"
-    ".ruzgarlogistic.com",
+    "*.ruzgarlogistic.com",
 ]
 
 
@@ -60,7 +59,11 @@ ROOT_URLCONF = 'ruzgar_logistic_backend.urls'
 
 WSGI_APPLICATION = 'ruzgar_logistic_backend.wsgi.application'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-PREPEND_WWW = False
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -108,13 +111,21 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Adjust this to your React app's URL
-    "http://ruzgarlogistic.com",
-    "https://ruzgarlogistic.com",
-    "http://www.ruzgarlogistic.com",
-    "https://www.ruzgarlogistic.com",
-]
+if not DEBUG:
+    CORS_ALLOWED_ORIGINS = [
+        "http://ruzgarlogistic.com",
+        "https://ruzgarlogistic.com",
+        "http://www.ruzgarlogistic.com",
+        "https://www.ruzgarlogistic.com",
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+    ]
+
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+
 
 CORS_ALLOW_CREDENTIALS = True
 
