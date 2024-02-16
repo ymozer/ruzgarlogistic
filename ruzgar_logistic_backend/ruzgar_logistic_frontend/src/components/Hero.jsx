@@ -24,7 +24,7 @@ function Hero() {
       {/* Background image. Maybe flashing lights on front */}
       <div className="absolute inset-0 bg-cover bg-no-repeat" id="scrollingImage"
         style={{
-          backgroundImage: "url('${process.env.PUBLIC_URL}/truck_obj.png')",
+          backgroundImage: "url('/truck_obj.png')",
           backgroundPosition: '25vw -7vw', // Shift the image to the right  
           zIndex: 0
 
@@ -33,7 +33,7 @@ function Hero() {
 
       {/* still background img */}
       <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ 
-        backgroundImage: "url('${process.env.PUBLIC_URL}/truck_objbg.png')", 
+        backgroundImage: "url('/truck_objbg.png')", 
         zIndex: -1,
         backgroundPosition: '200px -200px', // Shift the image to the right
       }}

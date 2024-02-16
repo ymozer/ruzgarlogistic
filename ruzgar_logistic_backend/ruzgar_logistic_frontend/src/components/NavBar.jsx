@@ -1,13 +1,11 @@
 import React from 'react';
 //svg
-import { ReactComponent as Logo } from '../logo.svg';
-
 const Navbar = () => {
     return (
       <nav className="flex items-center justify-between bg-gray-100 px-4 py-2 relative">
         <div className="flex-none w-14 h-14">
           <div className="logo" onMouseEnter={(e) => e.currentTarget.firstChild.classList.add('animate-slide')} onMouseLeave={(e) => e.currentTarget.firstChild.classList.remove('animate-slide')}>
-            <Logo className="transition-transform duration-500" />
+            <img src={process.env.PUBLIC_URL + '/logo.svg'} className="transition-transform duration-500"/> 
           </div>
         </div>
         <div className="flex-1 w-32 title text-center" style={{ zIndex: 20 }}>
