@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 def homepage(request):
     # Static data to serve for now
     data = {
-        "title": "Welcome to My Homepage",
-        "body": "This is a sample body text for the homepage."
+        "title": "Rüzgar Logistics",
+        "body": "Welcome to Rüzgar Logistics!"
     }
     return Response(data)
