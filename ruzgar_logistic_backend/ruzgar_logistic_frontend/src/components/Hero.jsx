@@ -5,6 +5,7 @@ import HorizontalScroll from './hs';
 
 function Hero() {
   return (
+<<<<<<< HEAD
     <div className="w-full relative py-16 overflow-auto">
       {/* Background image. Maybe flashing lights on front 
       <div className="">
@@ -13,6 +14,27 @@ function Hero() {
 */}
       {/* still background img */}
       <div className="absolute inset-0 bg-cover bg-no-repeat bg-truck-bg z-[-1]"></div>
+=======
+    <div className="text-white py-16 relative overflow-hidden">
+
+      {/* Background image. Maybe flashing lights on front */}
+      <div className="absolute inset-0 bg-cover bg-no-repeat" id="scrollingImage"
+        style={{
+          backgroundImage: "url('/static/truck_obj.png')",
+          backgroundPosition: '25vw -7vw', // Shift the image to the right  
+          zIndex: 0
+
+        }}
+      ></div>
+
+      {/* still background img */}
+      <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ 
+        backgroundImage: "url('/static/truck_objbg.png')", 
+        zIndex: -1,
+        backgroundPosition: '200px -200px', // Shift the image to the right
+      }}
+      ></div>
+>>>>>>> b007f02f5ffef04d7e0c8991f0f46897464e666a
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-50% md:from-30% from-white"></div>
